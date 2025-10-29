@@ -28,7 +28,7 @@ const Login = () => {
         setError(result.error)
         setIsLoading(false)
       } else {
-        router.push('/')
+        router.push('/dashboard')
       }
     } catch (error) {
       console.error('Login error:', error)
@@ -39,7 +39,7 @@ const Login = () => {
 
   const handleSocialLogin = async (provider) => {
     try {
-      await signIn(provider, { callbackUrl: '/' })
+      await signIn(provider, { callbackUrl: '/dashboard' })
     } catch (error) {
       console.error(`${provider} login error:`, error)
       setError(`Failed to login with ${provider}. Please try again.`)
@@ -103,16 +103,17 @@ const Login = () => {
         </div>
         <div className="space-y-4 text-sm font-medium">
           {/* Google Button */}
-          <button 
+          <button
             onClick={() => handleSocialLogin('google')}
             className="w-full flex items-center justify-center gap-x-3 py-2.5 border border-gray-600 rounded-lg hover:bg-gray-800 duration-150 active:bg-gray-700"
           >
             <Image
-              src="https://raw.githubusercontent.com/sidiDev/remote-assets/7cd06bf1d8859c578c2efbfda2c68bd6bedc66d8/google-icon.svg"
+              src="http://pluspng.com/img-png/google-logo-png-open-2000.png"
               alt="Google"
               width={20}
               height={20}
               className="w-5 h-5"
+              unoptimized
             />
             Continue with Google
           </button>
@@ -132,13 +133,14 @@ const Login = () => {
             className="w-full flex items-center justify-center gap-x-3 py-2.5 border border-gray-600 rounded-lg hover:bg-gray-800 duration-150 active:bg-gray-700"
           >
             <Image
-              src="https://raw.githubusercontent.com/sidiDev/remote-assets/f7119b9bdd8c58864383802fb92c7fc3a25c0646/twitter-icon.svg"
+              src="https://freepnglogo.com/images/all_img/logo-x-modern-2023-7cbd.png"
               alt="Twitter"
               width={20}
               height={20}
               className="w-5 h-5"
+              unoptimized
             />
-            Continue with Twitter
+            Continue with X
           </button>
           {/* Github Button */}
           <button 
@@ -151,6 +153,7 @@ const Login = () => {
               width={20}
               height={20}
               className="w-5 h-5"
+              unoptimized
             />
             Continue with Github
           </button>

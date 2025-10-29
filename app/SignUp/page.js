@@ -61,7 +61,7 @@ const Signup = () => {
         setError('Account created! Please login.')
         setTimeout(() => router.push('/Login'), 2000)
       } else {
-        router.push('/')
+        router.push('/dashboard')
       }
     } catch (error) {
       console.error('Signup error:', error)
